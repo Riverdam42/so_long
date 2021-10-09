@@ -6,7 +6,7 @@
 #    By: kkawano <kkawano@student.42tokyo.j>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/07 14:23:27 by kkawano           #+#    #+#              #
-#    Updated: 2021/10/07 14:33:38 by kkawano          ###   ########.fr        #
+#    Updated: 2021/10/07 14:37:08 by kkawano          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,9 @@ RM = rm -f
 
 %.o: %.c
 	$(CC) $(CFLAGS) -Imlx -c $< -o $@
+
+$(NAME: $(OBJS)
+	$(CC) -Lmlx -lmlx -franework OpenGL -framework AppKit -o $(NAME)
 
 all: $(NAME)
 
