@@ -3,14 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kkawano <kkawano@student.42tokyo.j>        +#+  +:+       +#+         #
+#    By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/07 14:23:27 by kkawano           #+#    #+#              #
-#    Updated: 2021/10/07 14:37:08 by kkawano          ###   ########.fr        #
+#    Updated: 2021/10/11 22:16:36 by kkawano          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
+
+SRCS = main.c
+
+OBJS = ${SRCS:.c=.o}
 
 INC = includes
 
@@ -20,13 +24,13 @@ CFLAGS = -Wall -Werror -Wextra
 
 RM = rm -f
 
-%.o: %.c
-	$(CC) $(CFLAGS) -Imlx -c $< -o $@
-
-$(NAME: $(OBJS)
-	$(CC) -Lmlx -lmlx -franework OpenGL -framework AppKit -o $(NAME)
-
 all: $(NAME)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -o $@ -c $<
+
+$(NAME): $(OBJS)
+	$(CC) -lmlx -framework OpenGL -framework AppKit $(OBJS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)
