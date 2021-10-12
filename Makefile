@@ -6,13 +6,15 @@
 #    By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/07 14:23:27 by kkawano           #+#    #+#              #
-#    Updated: 2021/10/11 22:16:36 by kkawano          ###   ########.fr        #
+#    Updated: 2021/10/12 18:25:56 by kkawano          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-SRCS = main.c
+SRCS = 	main.c\
+		ft_key_hook.c\
+		ft_close_maps.c
 
 OBJS = ${SRCS:.c=.o}
 
