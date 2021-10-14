@@ -22,28 +22,32 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color) //自作関数pixel
 
 int	main(void)
 {
-	t_vars	vars;
-	t_data	img;
+	t_data	data;
 
-	vars.mlx = mlx_init();
-	vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Hello world!");
-	img.img = mlx_new_image(vars.mlx, 1920, 1080);
-	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
-	int	i = 5;
-	int	j = 5;
-	while (j < 300)
+	data.mlx = mlx_init();
+	data.win = mlx_new_window(data.mlx, 1920, 1080, "Hello world!");
+	data.img = mlx_new_image(data.mlx, 50, 50);
+	data.addr = mlx_get_data_addr(data.img, &data.bits_per_pixel, &data.line_length, &data.endian);
+	data.player_x = 0;
+	data.player_y = 0;
+	data.counter = 1;
+	int	y = 0;
+	int	x = 0;
+	while (y < 50)
 	{
-		while (i < 300)
+		while (x < 50)
 		{
-			my_mlx_pixel_put(&img, i, j, 0x00FF0000);
-			i++;
+			my_mlx_pixel_put(&data, x, y, 0x00FF0000);
+			x++;
 		}
-		j++;
-		i = 5;
+		y++;
+		x = 0;
 	}
-	mlx_put_image_to_window(vars.mlx, vars.win, img.img, 0, 0);
-	mlx_key_hook(vars.win, ft_key_hook, &vars);
-	mlx_hook(vars.win, 17, 1L<<0, ft_close, &vars);
-	mlx_loop(vars.mlx);
+	mlx_put_image_to_window(data.mlx, data.win, data.img, 5, 5);
+	mlx_key_hook(data.win, ft_key_hook, &data); //座標を変える
+	//mlx_loop_hook(data.mlx, ft_loop_drew, &data); //roop_drewで描写を設定
+	mlx_hook(data.win, 17, 1L<<17, ft_close, &data); //dataで座標の構造体管理をする
+	mlx_loop(data.mlx);
 	return (0);
 }
+

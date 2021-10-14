@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 17:44:33 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/12 18:30:03 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/14 22:53:1 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,16 @@ typedef struct	s_data
 {
 	void	*img;
 	char	*addr;
+	void	*mlx;
+	void	*win;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
+	int		player_x;
+	int		player_y;
+	int		counter;
 }				t_data;
 
-typedef struct	s_vars
-{
-	void	*mlx;
-	void	*win;
-}				t_vars;
-
-int	ft_key_hook(int keycode, t_vars *vars);
-int	ft_close(int keycode, t_vars *vars);
+int	ft_key_hook(int keycode, t_data *data);
+int	ft_close(int keycode, t_data *data);
 #endif

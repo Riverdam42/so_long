@@ -6,7 +6,7 @@
 #    By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/07 14:23:27 by kkawano           #+#    #+#              #
-#    Updated: 2021/10/12 18:25:56 by kkawano          ###   ########.fr        #
+#    Updated: 2021/10/14 22:36:12 by kkawano          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ INC = includes
 
 CC = gcc
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -fsanitize=address -g
 
 RM = rm -f
 
@@ -32,7 +32,7 @@ all: $(NAME)
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 $(NAME): $(OBJS)
-	$(CC) -lmlx -framework OpenGL -framework AppKit $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) -lmlx -framework OpenGL -framework AppKit $(OBJS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)
