@@ -24,25 +24,26 @@ int	main(void)
 {
 	t_data	data;
 
+	data.relative_path = "image/kirby.xpm";
 	data.mlx = mlx_init();
-	data.win = mlx_new_window(data.mlx, 1920, 1080, "Hello world!");
-	data.img = mlx_new_image(data.mlx, 50, 50);
+	data.win = mlx_new_window(data.mlx, 1920, 1080, "so_long");
+	data.img = mlx_xpm_file_to_image(data.mlx, data.relative_path, &data.img_width, &data.img_height);
 	data.addr = mlx_get_data_addr(data.img, &data.bits_per_pixel, &data.line_length, &data.endian);
 	data.player_x = 0;
 	data.player_y = 0;
 	data.counter = 1;
-	int	y = 0;
-	int	x = 0;
-	while (y < 50)
-	{
-		while (x < 50)
-		{
-			my_mlx_pixel_put(&data, x, y, 0x00FF0000);
-			x++;
-		}
-		y++;
-		x = 0;
-	}
+	// int	y = 0;
+	// int	x = 0;
+	// while (y < 50)
+	// {
+	// 	while (x < 50)
+	// 	{
+	// 		my_mlx_pixel_put(&data, x, y, 0x00FF0000);
+	// 		x++;
+	// 	}
+	// 	y++;
+	// 	x = 0;
+	// }
 	mlx_put_image_to_window(data.mlx, data.win, data.img, 5, 5);
 	mlx_key_hook(data.win, ft_key_hook, &data); //座標を変える
 	//mlx_loop_hook(data.mlx, ft_loop_drew, &data); //roop_drewで描写を設定

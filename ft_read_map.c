@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_close_maps.c                                    :+:      :+:    :+:   */
+/*   ft_read_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 17:44:19 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/15 17:21:34 by kkawano          ###   ########.fr       */
+/*   Created: 2021/10/17 09:44:21 by kkawano           #+#    #+#             */
+/*   Updated: 2021/10/17 10:15:02 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ft_close(int keycode, t_data *data)
+//readでmapを読み込んでいく
+
+static void	img_init(t_vars *vars)
 {
-    (void)keycode;
-    (void)data;
-    exit(EXIT_SUCCESS);
-    return (0);
+	vars->map = NULL;
+	vars->mlx = NULL;
+	vars->mlx_win = NULL;
+	vars->img.player = NULL;
+	vars->img.freespace = NULL;
+	vars->img.wall = NULL;
+	vars->img.collection = NULL;
+	vars->img.goal = NULL;
 }

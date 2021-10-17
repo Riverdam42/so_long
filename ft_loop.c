@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_close_maps.c                                    :+:      :+:    :+:   */
+/*   ft_loop.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 17:44:19 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/15 17:21:34 by kkawano          ###   ########.fr       */
+/*   Created: 2021/10/17 10:09:47 by kkawano           #+#    #+#             */
+/*   Updated: 2021/10/17 10:14:27 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ft_close(int keycode, t_data *data)
+//animationをループで描写していく！
+
+static void loop_drew()
 {
-    (void)keycode;
-    (void)data;
-    exit(EXIT_SUCCESS);
-    return (0);
+    int count;
+
+    count = 0;
+    mlx_destroy_image(data->mlx, data->image.player);
+    data->image.player = mlx_xpm_file_to_image(data->mlx, )
 }
