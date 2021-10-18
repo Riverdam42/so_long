@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 09:44:21 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/18 09:32:13 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/18 15:40:58 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ static void	map_image_init(t_data *data)
 void	set_map_path(t_data *data)
 {
 	data->map_image.player = "images/kirby.xpm";
-	data->map_image.freespace = "images/space.xpm"; //まだ決まってない
+	data->map_image.freespace = "images/freespace.xpm"; //まだ決まってない
 	data->map_image.wall = "images/starblock.xpm";
 	data->map_image.collection = "images/Maxmum.xpm";
-	data->map_image.goal = "images/goal.xpm"; //もう少しでできそう
+	data->map_image.goal = "images/Star.xpm";
 	data->img.s_img = mlx_xpm_file_to_image(data->mlx, data->map_image.freespace,
 			&data->img.width, &data->img.height);
 	data->img.w_img = mlx_xpm_file_to_image(data->mlx, data->map_image.wall,
