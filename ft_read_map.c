@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 09:44:21 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/19 22:17:18 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/19 23:16:03 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ static void add_next_newline(t_data *data, char *new_line)
 	new_map = (char **)malloc(sizeof(char *) * (data->map_height + 2)); //new_line + NULL //current size + 1
 	//if (!new_map)
 		//ERROR
+	// copy old map to new map //new_mapに格納されたアドレスをコピーする
+	// free old map
+	// old map = new map
+	data->map = new_map;
 
 	data->map_height++;
 }
@@ -60,3 +64,11 @@ void	ft_read_map(t_data *data, char *map_ber)
 
 // map = {NULL}
 // new_map = {new_line, NULL}
+
+// read map
+// map size に応じてwindow を作る
+
+// 5 x 5
+// 32
+// window ((5 * 32), (5 * 32))
+// blue background (160, 160)
