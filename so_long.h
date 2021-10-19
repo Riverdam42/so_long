@@ -34,6 +34,12 @@ typedef struct s_img
 	void	*goal;
 }				t_img;
 
+// typedef struct s_player
+// {
+// 	int		x;
+// 	int		y;
+// }				t_player;
+
 // typedef struct s_point
 // {
 // 	int	x;
@@ -42,15 +48,17 @@ typedef struct s_img
 
 typedef struct	s_data
 {
+	char	**map;
 	char	*addr;
 	void	*mlx;
 	void	*img;
 	void	*win;
 	char	*relative_path;
-	int		img_width;
-	int		img_height;
+	int		img_width; //画像の幅
+	int		img_height; //画像の高さ
 	int		bits_per_pixel;
 	int		line_length;
+	int		map_height;
 	int		endian;
 	int		player_x;
 	int		player_y;

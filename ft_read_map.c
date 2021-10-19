@@ -6,41 +6,57 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 09:44:21 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/18 15:40:58 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/19 22:17:18 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-//readでmapを読み込んでいく
+// static void	map_image_init(t_data *data)
+// {
+// 	data->map = 0;
+// 	data->mlx = 0;
+// 	data->mlx_win = 0;
+// 	data->img.player = 0;
+// 	data->img.freespace = 0;
+// 	data->img.wall = 0;
+// 	data->img.collection = 0;
+// 	data->img.goal = 0;
+// }
 
-static void	map_image_init(t_data *data)
+static void add_next_newline(t_data *data, char *new_line)
 {
-	data->map = 0;
-	data->mlx = 0;
-	data->mlx_win = 0;
-	data->img.player = 0;
-	data->img.freespace = 0;
-	data->img.wall = 0;
-	data->img.collection = 0;
-	data->img.goal = 0;
+	char **new_map; //new_map = {new_line, NULL}
+
+	new_map = (char **)malloc(sizeof(char *) * (data->map_height + 2)); //new_line + NULL //current size + 1
+	//if (!new_map)
+		//ERROR
+
+	data->map_height++;
 }
 
-void	set_map_path(t_data *data)
+void	ft_read_map(t_data *data, char *map_ber)
 {
-	data->map_image.player = "images/kirby.xpm";
-	data->map_image.freespace = "images/freespace.xpm"; //まだ決まってない
-	data->map_image.wall = "images/starblock.xpm";
-	data->map_image.collection = "images/Maxmum.xpm";
-	data->map_image.goal = "images/Star.xpm";
-	data->img.s_img = mlx_xpm_file_to_image(data->mlx, data->map_image.freespace,
-			&data->img.width, &data->img.height);
-	data->img.w_img = mlx_xpm_file_to_image(data->mlx, data->map_image.wall,
-			&data->img.width, &data->img.height);
-	data->img.c_img = mlx_xpm_file_to_image(data->mlx, data->map_image.collection,
-			&data->img.width, &data->img.height);
-	data->img.e_img = mlx_xpm_file_to_image(data->mlx, data->map_image.goal,
-			&data->img.width, &data->img.height);
-	data->img.p_img = mlx_xpm_file_to_image(data->mlx, data->map_image.player,
-			&data->img.width, &data->img.height);
+	int		fd;
+	char	*new_line;
+
+	data->map = (char **)malloc(sizeof(char *));
+	if (!data->map)
+		exit(EXIT_FAILURE);
+	data->map[0] = NULL;
+	data->map_height = 0;
+	fd = open(map_ber, O_RDONLY);
+	if (fd == -1)
+		exit(EXIT_FAILURE);
+	new_line = "start";
+	while (new_line)
+	{
+		new_line = get_next_line(fd); //GNLで１行ずつ読み込む //成功したらマップの全行をnew_mapにコピーする
+		if (new_line)
+	 		add_next_newline(data, new_line);
+	}
+	//mapを閉じたら（1番最後に）読み込んだnew_lineをフリーする
 }
+
+// map = {NULL}
+// new_map = {new_line, NULL}

@@ -12,18 +12,11 @@
 
 #include "so_long.h"
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color) //自作関数pixelを代入する
-{
-	char	*dst;
-
-	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
-}
-
 int	main(void)
 {
 	t_data	data;
 
+	ft_read_map(&data, "pdf.ber");
 	data.relative_path = "image/kirby.xpm";
 	data.mlx = mlx_init();
 	data.win = mlx_new_window(data.mlx, 1920, 1080, "so_long");
@@ -32,18 +25,6 @@ int	main(void)
 	data.player_x = 0;
 	data.player_y = 0;
 	data.counter = 1;
-	// int	y = 0;
-	// int	x = 0;
-	// while (y < 50)
-	// {
-	// 	while (x < 50)
-	// 	{
-	// 		my_mlx_pixel_put(&data, x, y, 0x00FF0000);
-	// 		x++;
-	// 	}
-	// 	y++;
-	// 	x = 0;
-	// }
 	mlx_put_image_to_window(data.mlx, data.win, data.img, 5, 5);
 	mlx_key_hook(data.win, ft_key_hook, &data); //座標を変える
 	//mlx_loop_hook(data.mlx, ft_loop_drew, &data); //roop_drewで描写を設定
@@ -52,3 +33,21 @@ int	main(void)
 	return (0);
 }
 
+// void	set_map_path(t_data *data)
+// {
+// 	data->map_image.player = "images/kirby.xpm";
+// 	data->map_image.freespace = "images/freespace.xpm"; //まだ決まってない
+// 	data->map_image.wall = "images/starblock.xpm";
+// 	data->map_image.collection = "images/Maxmum.xpm";
+// 	data->map_image.goal = "images/Star.xpm";
+// 	data->img.s_img = mlx_xpm_file_to_image(data->mlx, data->map_image.freespace,
+// 			&data->img.width, &data->img.height);
+// 	data->img.w_img = mlx_xpm_file_to_image(data->mlx, data->map_image.wall,
+// 			&data->img.width, &data->img.height);
+// 	data->img.c_img = mlx_xpm_file_to_image(data->mlx, data->map_image.collection,
+// 			&data->img.width, &data->img.height);
+// 	data->img.e_img = mlx_xpm_file_to_image(data->mlx, data->map_image.goal,
+// 			&data->img.width, &data->img.height);
+// 	data->img.p_img = mlx_xpm_file_to_image(data->mlx, data->map_image.player,
+// 			&data->img.width, &data->img.height);
+// }
