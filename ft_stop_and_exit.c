@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 10:17:09 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/21 21:39:16 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/21 22:05:25 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ int	stop_and_exit(t_data *data)
 	if (data->win)
 		mlx_destroy_window(data->mlx, data->win);
 	img_destroy(data);
-	if (data->mlx)
-	{
-		mlx_destroy_display(data->mlx);
-		free(data->mlx);
-	}
+	// if (data->mlx)
+	// {
+	// 	mlx_destroy_display(data->mlx);
+	// 	free(data->mlx);
+	// }
 	if (data->map)
 	{
 		while (data->map[++i])

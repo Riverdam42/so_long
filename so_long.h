@@ -51,7 +51,6 @@ typedef struct	s_data
 	char	**map;
 	char	*addr;
 	void	*mlx;
-	void	*img;
 	void	*win;
 	char	*relative_path;
 	int		img_width; //画像の幅
@@ -63,7 +62,7 @@ typedef struct	s_data
 	int		player_x;
 	int		player_y;
 	int		counter;
-	t_img	map_img;
+	t_img	img;
 }				t_data;
 
 void	ft_read_map(t_data *data, char *map_ber);

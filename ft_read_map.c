@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 09:44:21 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/21 21:42:26 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/21 21:52:54 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,11 @@ static void add_next_newline(t_data *data, char *new_line)
 		stop_and_exit(data);
 	i = 0;
 	while(data->map[i])
-		new_map[i++] = data->map[i++]; //new_mapに格納されたアドレスをコピーする
+	{
+		new_map[i] = data->map[i]; //new_mapに格納されたアドレスをコピーする
+		i++;
+	}
+	new_map[i] = new_line;
 	free(data->map);     // free old map
 	data->map = new_map;
 	data->map_height++;
