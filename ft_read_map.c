@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 09:44:21 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/21 22:30:18 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/21 22:52:39 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,17 @@
 
 void	set_map_path(t_data *data)
 {
-	data->img.freespace = mlx_xpm_file_to_image(data->mlx, "images/kirby.xpm",
+	data->img.player = mlx_xpm_file_to_image(data->mlx, "image/kirby.xpm",
 			&data->img_width, &data->img_height);
-	data->img.wall = mlx_xpm_file_to_image(data->mlx, "images/freespace.xpm",
+	// if (!data->img.player)
+		//print_errr(読み込めないよ！のERROR)
+	data->img.freespace = mlx_xpm_file_to_image(data->mlx, "image/freespace.xpm",
 			&data->img_width, &data->img_height);
-	data->img.collection = mlx_xpm_file_to_image(data->mlx,"images/starblock.xpm",
+	data->img.wall = mlx_xpm_file_to_image(data->mlx,"image/starblock.xpm",
 			&data->img_width, &data->img_height);
-	data->img.goal = mlx_xpm_file_to_image(data->mlx, "images/Maxmum.xpm",
+	data->img.collection = mlx_xpm_file_to_image(data->mlx, "image/Maximum.xpm",
 			&data->img_width, &data->img_height);
-	data->img.player = mlx_xpm_file_to_image(data->mlx, "images/Star.xpm",
+	data->img.goal = mlx_xpm_file_to_image(data->mlx, "image/Star.xpm",
 			&data->img_width, &data->img_height);
 }
 
@@ -49,12 +51,12 @@ static void add_next_newline(t_data *data, char *new_line)
 	i = 0;
 	while(data->map[i])
 	{
-		new_map[i] = data->map[i]; //new_mapに格納されたアドレスをコピーする
+		new_map[i] = data->map[i];
 		i++;
 	}
 	new_map[i] = new_line;
 	new_map[i + 1] = NULL;
-	free(data->map);     // free old map
+	free(data->map);
 	data->map = new_map;
 	data->map_height++;
 }
@@ -82,13 +84,5 @@ void	ft_read_map(t_data *data, char *map_ber)
 	//mapを閉じたら（1番最後に）読み込んだnew_lineをフリーする
 }
 
-// map = {NULL}
-// new_map = {new_line, NULL}
-
 // read map
 // map size に応じてwindow を作る
-
-// 5 x 5
-// 32
-// window ((5 * 32), (5 * 32))
-// blue background (160, 160)
