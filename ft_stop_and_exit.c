@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 10:17:09 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/21 16:39:31 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/21 16:47:40 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	img_destroy(t_data *data)
 		mlx_destroy_image(data->mlx, data->img.goal);
 }
 
-int	destroy_and_exit(t_data *data)
+int	stop_and_exit(t_data *data)
 {
 	int	i;
 

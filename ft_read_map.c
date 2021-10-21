@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 09:44:21 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/21 16:38:49 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/21 16:48:21 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ static void add_next_newline(t_data *data, char *new_line)
 	int		i;
 
 	new_map = (char **)malloc(sizeof(char *) * (data->map_height + 2)); //new_line + NULL //current size + 1
-	//if (!new_map)
-		//ERROR
+	if (!new_map)
+		stop_and_exit(data);
 	i = 0;
 	while(data->map[i])
 		new_map[i++] = data->map[i++]; //new_mapに格納されたアドレスをコピーする
