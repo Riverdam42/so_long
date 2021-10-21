@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 09:44:21 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/21 21:52:54 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/21 22:30:18 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,26 @@
 // 	data->img.goal = 0;
 // }
 
+void	set_map_path(t_data *data)
+{
+	data->img.freespace = mlx_xpm_file_to_image(data->mlx, "images/kirby.xpm",
+			&data->img_width, &data->img_height);
+	data->img.wall = mlx_xpm_file_to_image(data->mlx, "images/freespace.xpm",
+			&data->img_width, &data->img_height);
+	data->img.collection = mlx_xpm_file_to_image(data->mlx,"images/starblock.xpm",
+			&data->img_width, &data->img_height);
+	data->img.goal = mlx_xpm_file_to_image(data->mlx, "images/Maxmum.xpm",
+			&data->img_width, &data->img_height);
+	data->img.player = mlx_xpm_file_to_image(data->mlx, "images/Star.xpm",
+			&data->img_width, &data->img_height);
+}
+
 static void add_next_newline(t_data *data, char *new_line)
 {
 	char **new_map; //new_map = {new_line, NULL}
 	int		i;
 
-	new_map = (char **)malloc(sizeof(char *) * (data->map_height + 2)); //new_line + NULL //current size + 1
+	new_map = (char **)malloc(sizeof(char *) * (data->map_height + 2));
 	if (!new_map)
 		stop_and_exit(data);
 	i = 0;
@@ -39,6 +53,7 @@ static void add_next_newline(t_data *data, char *new_line)
 		i++;
 	}
 	new_map[i] = new_line;
+	new_map[i + 1] = NULL;
 	free(data->map);     // free old map
 	data->map = new_map;
 	data->map_height++;

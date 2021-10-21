@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:19:40 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/18 16:12:16 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/21 22:20:02 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ int	ft_key_hook(int keycode, t_data *data) //特定のkeycode(a==0)を押した�
         exit(EXIT_SUCCESS);
     }
 	mlx_clear_window(data->mlx, data->win);
-	mlx_put_image_to_window(data->mlx, data->win, data->img, data->player_x, data->player_y);
+	mlx_put_image_to_window(data->mlx, data->win, data->img.player, data->player_x, data->player_y);
     return (0);
 }
