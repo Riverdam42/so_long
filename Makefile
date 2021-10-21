@@ -6,13 +6,14 @@
 #    By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/07 14:23:27 by kkawano           #+#    #+#              #
-#    Updated: 2021/10/17 16:58:36 by kkawano          ###   ########.fr        #
+#    Updated: 2021/10/21 16:04:36 by kkawano          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
 SRCS = 	main.c\
+		ft_read_maps\
 		ft_key_hook.c\
 		ft_close_maps.c
 

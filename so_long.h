@@ -66,9 +66,10 @@ typedef struct	s_data
 	t_img	map_img;
 }				t_data;
 
-int	ft_key_hook(int keycode, t_data *data);
-int	ft_close(int keycode, t_data *data);
-int	print_error(char *str);
+void	ft_read_map(t_data *data, char *map_ber);
+int		ft_key_hook(int keycode, t_data *data);
+int		ft_close(int keycode, t_data *data);
+int		print_error(char *str);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putnbr_fd(int nb, int fd);
