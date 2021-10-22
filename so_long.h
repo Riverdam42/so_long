@@ -30,6 +30,7 @@
 # define S 1
 # define D 2
 # define ESC 53
+# define TILESIZE 48
 
 typedef struct s_img
 {

@@ -23,9 +23,9 @@ int	main(void)
 	data.player_y = 0;
 	data.counter = 1;
 	set_map_path(&data);
- 	mlx_put_image_to_window(data.mlx, data.win, data.img.goal, 5, 5);
+ 	//mlx_put_image_to_window(data.mlx, data.win, data.img.goal, 5, 5);
+	mlx_loop_hook(data.mlx, ft_drew_map, &data);
 	//mlx_key_hook(data.win, ft_key_hook, &data); //座標を変える
-	//mlx_loop_hook(data.mlx, ft_loop_drew, &data); //roop_drewで描写を設定
 	mlx_hook(data.win, 17, 1L<<17, ft_close_map, &data); //dataで座標の構造体管理をする
 	mlx_loop(data.mlx);
 	return (0);
