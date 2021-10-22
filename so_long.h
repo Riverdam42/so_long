@@ -31,6 +31,10 @@
 # define D_KEY 2
 # define ESC_KEY 53
 
+# define PLAYER P
+# define COLLECTION C
+# define GOAL E
+# define FREESPACE 0
 # define WALL 1
 # define TILESIZE 32
 

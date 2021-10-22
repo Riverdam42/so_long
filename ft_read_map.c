@@ -6,27 +6,11 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 09:44:21 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/23 02:02:15 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/23 03:00:00 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void	set_map_path(t_data *data)
-{
-	data->img.player = mlx_xpm_file_to_image(data->mlx, "image/kirby.xpm",
-			&data->img_width, &data->img_height);
-	// if (!data->img.player)
-		//print_errr(読み込めないよ！のERROR)
-	data->img.freespace = mlx_xpm_file_to_image(data->mlx, "image/freespace.xpm",
-			&data->img_width, &data->img_height);
-	data->img.wall = mlx_xpm_file_to_image(data->mlx,"image/starblock.xpm",
-			&data->img_width, &data->img_height);
-	data->img.collection = mlx_xpm_file_to_image(data->mlx, "image/Maximum.xpm",
-			&data->img_width, &data->img_height);
-	data->img.goal = mlx_xpm_file_to_image(data->mlx, "image/Star.xpm",
-			&data->img_width, &data->img_height);
-}
 
 static void add_next_newline(t_data *data, char *new_line)
 {
