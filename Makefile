@@ -6,7 +6,7 @@
 #    By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/07 14:23:27 by kkawano           #+#    #+#              #
-#    Updated: 2021/10/22 21:06:19 by kkawano          ###   ########.fr        #
+#    Updated: 2021/10/22 22:38:55 by kkawano          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = so_long
 
 SRCS = 	main.c\
 		ft_read_map.c\
+		ft_draw_map.c\
 		ft_key_hook.c\
 		ft_close_map.c\
 		ft_stop_and_exit.c\
@@ -31,6 +32,7 @@ CFLAGS = -Wall -Werror -Wextra -fsanitize=address -g
 RM = rm -f
 
 all: $(NAME)
+
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -lmlx -framework OpenGL -framework AppKit $(OBJS) -o $(NAME)
 

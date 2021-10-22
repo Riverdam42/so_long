@@ -25,12 +25,14 @@
 #include <sysexits.h>
 #include "gnl/get_next_line.h"
 
-# define W 13
-# define A 0
-# define S 1
-# define D 2
-# define ESC 53
-# define TILESIZE 48
+# define W_KEY 13
+# define A_KEY 0
+# define S_KEY 1
+# define D_KEY 2
+# define ESC_KEY 53
+
+# define WALL 1
+# define TILESIZE 32
 
 typedef struct s_img
 {
@@ -64,8 +66,8 @@ typedef struct	s_data
 	int		img_height; //画像の高さ
 	int		bits_per_pixel;
 	int		line_length;
-	int		map_low;
-	int		map_col;
+	int		map_row_count;
+	int		map_col_count;
 	int		endian;
 	int		player_x;
 	int		player_y;
@@ -74,12 +76,13 @@ typedef struct	s_data
 }				t_data;
 
 void	ft_read_map(t_data *data, char *map_ber);
+int		ft_draw_map(t_data *data);
 int		ft_key_hook(int keycode, t_data *data);
 void	set_map_path(t_data *data);
 int		ft_close_map(int keycode, t_data *data);
 int		stop_and_exit(t_data *data);
 int		print_error(char *str);
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putnbr_fd(int nb, int fd);

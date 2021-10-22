@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:19:40 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/22 16:01:08 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/23 00:48:12 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 int	ft_key_hook(int keycode, t_data *data) //特定のkeycode(a==0)を押したら主人公を動かして歩数をカウントする
 {
 	printf("counter: %d\n", data->counter++);
-	if (keycode == A)
-		data->player_x -= 32;
-	if (keycode == S)
+	if (keycode == A_KEY)
+		//if (data->map[x - 32][y] != WALL) //移動した先がWALLじゃなかったら移動する
+			data->player_x -= 32;
+	if (keycode == S_KEY)
 		data->player_y += 32;
-	if (keycode == D)
+	if (keycode == D_KEY)
 		data->player_x += 32;
-	if (keycode == W)
+	if (keycode == W_KEY)
 		data->player_y -= 32;
-	if (keycode == ESC)
+	if (keycode == ESC_KEY)
 	{
         mlx_destroy_window(data->mlx, data->win);
         exit(EXIT_SUCCESS);
     }
 	mlx_clear_window(data->mlx, data->win);
-	mlx_put_image_to_window(data->mlx, data->win, data->img.player, data->player_x, data->player_y);
     return (0);
 }
