@@ -6,7 +6,7 @@
 #    By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/07 14:23:27 by kkawano           #+#    #+#              #
-#    Updated: 2021/10/21 22:14:56 by kkawano          ###   ########.fr        #
+#    Updated: 2021/10/22 16:47:11 by kkawano          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = so_long
 SRCS = 	main.c\
 		ft_read_map.c\
 		ft_key_hook.c\
-		ft_close_maps.c\
+		ft_close_map.c\
 		ft_stop_and_exit.c\
 		gnl/get_next_line.c\
 		gnl/get_next_line_utils.c

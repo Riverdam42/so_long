@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_close_maps.c                                    :+:      :+:    :+:   */
+/*   ft_close_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 17:44:19 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/15 17:21:34 by kkawano          ###   ########.fr       */
+/*   Created: 2021/10/22 16:46:43 by kkawano           #+#    #+#             */
+/*   Updated: 2021/10/22 16:46:49 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ft_close(int keycode, t_data *data)
+int	ft_close_map(int keycode, t_data *data)
 {
     (void)keycode;
     (void)data;

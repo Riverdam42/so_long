@@ -74,7 +74,7 @@ typedef struct	s_data
 void	ft_read_map(t_data *data, char *map_ber);
 int		ft_key_hook(int keycode, t_data *data);
 void	set_map_path(t_data *data);
-int		ft_close(int keycode, t_data *data);
+int		ft_close_map(int keycode, t_data *data);
 int		stop_and_exit(t_data *data);
 int		print_error(char *str);
 void	ft_putchar_fd(char c, int fd);
