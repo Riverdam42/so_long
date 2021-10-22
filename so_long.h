@@ -61,7 +61,6 @@ typedef struct	s_data
 	char	*addr;
 	void	*mlx;
 	void	*win;
-	char	*relative_path;
 	int		img_width; //画像の幅
 	int		img_height; //画像の高さ
 	int		bits_per_pixel;
@@ -76,9 +75,10 @@ typedef struct	s_data
 }				t_data;
 
 void	ft_read_map(t_data *data, char *map_ber);
+void	init_data(t_data *data);
+void	set_map_path(t_data *data);
 int		ft_draw_map(t_data *data);
 int		ft_key_hook(int keycode, t_data *data);
-void	set_map_path(t_data *data);
 int		ft_close_map(int keycode, t_data *data);
 int		stop_and_exit(t_data *data);
 int		print_error(char *str);

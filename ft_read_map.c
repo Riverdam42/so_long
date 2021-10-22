@@ -6,23 +6,11 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 09:44:21 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/23 00:20:04 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/23 02:02:15 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-// static void	map_image_init(t_data *data)
-// {
-// 	data->map = 0;
-// 	data->mlx = 0;
-// 	data->mlx_win = 0;
-// 	data->img.player = 0;
-// 	data->img.freespace = 0;
-// 	data->img.wall = 0;
-// 	data->img.collection = 0;
-// 	data->img.goal = 0;
-// }
 
 void	set_map_path(t_data *data)
 {
