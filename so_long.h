@@ -63,7 +63,8 @@ typedef struct	s_data
 	int		img_height; //画像の高さ
 	int		bits_per_pixel;
 	int		line_length;
-	int		map_height;
+	int		map_low;
+	int		map_col;
 	int		endian;
 	int		player_x;
 	int		player_y;
@@ -77,6 +78,7 @@ void	set_map_path(t_data *data);
 int		ft_close_map(int keycode, t_data *data);
 int		stop_and_exit(t_data *data);
 int		print_error(char *str);
+size_t	ft_strlen(const char *str)
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putnbr_fd(int nb, int fd);

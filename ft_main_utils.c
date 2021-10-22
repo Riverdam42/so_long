@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 10:29:16 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/17 10:31:32 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/22 19:01:24 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,16 @@ void	ft_putnbr_fd(int nb, int fd)
 		ft_putnbr_fd(nb / 10 * sign, fd);
 	}
 	ft_putchar_fd(nb % 10 * sign + '0', fd);
+}
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	len;
+
+	len = 0;
+	while (str[len])
+	{
+		len++;
+	}
+	return (len);
 }
