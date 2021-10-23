@@ -31,11 +31,11 @@
 # define D_KEY 2
 # define ESC_KEY 53
 
-# define PLAYER P
-# define COLLECTION C
-# define GOAL E
-# define FREESPACE 0
-# define WALL 1
+# define PLAYER 'P'
+# define COLLECTION 'C'
+# define GOAL 'E'
+# define FREESPACE '0'
+# define WALL '1'
 # define TILESIZE 32
 
 typedef struct s_img
@@ -47,11 +47,6 @@ typedef struct s_img
 	void	*goal;
 }				t_img;
 
-// typedef struct s_player
-// {
-// 	int		x;
-// 	int		y;
-// }				t_player;
 
 // typedef struct s_point
 // {
@@ -75,6 +70,7 @@ typedef struct	s_data
 	int		player_x;
 	int		player_y;
 	int		counter;
+	int		goal_flag;
 	t_img	img;
 }				t_data;
 

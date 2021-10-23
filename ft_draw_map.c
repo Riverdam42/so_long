@@ -6,18 +6,26 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 22:18:58 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/23 02:55:20 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/23 23:59:58 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+// void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+// {
+// 	char	*dst;
+
+// 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+// 	*(unsigned int*)dst = color;
+// }
+
 void	draw_image(t_data *data, int x, int y)
 {
 	if (data->map[y][x] == 'P')
 	{
-        data->player_x = x * TILESIZE;
-        data->player_y = y * TILESIZE;
+        data->player_x = x;
+        data->player_y = y;
     }
     else if (data->map[y][x] == 'C')
 		mlx_put_image_to_window(data->mlx, data->win, data->img.collection, x * TILESIZE, y * TILESIZE);
@@ -27,7 +35,7 @@ void	draw_image(t_data *data, int x, int y)
         mlx_put_image_to_window(data->mlx, data->win, data->img.freespace, x * TILESIZE, y * TILESIZE);
     else if (data->map[y][x] == '1')
         mlx_put_image_to_window(data->mlx, data->win, data->img.wall, x * TILESIZE, y * TILESIZE);
-    mlx_put_image_to_window(data->mlx, data->win, data->img.player, data->player_x, data->player_y);
+    mlx_put_image_to_window(data->mlx, data->win, data->img.player, data->player_x * TILESIZE, data->player_y * TILESIZE);
 }
 
 int     ft_draw_map(t_data *data)
