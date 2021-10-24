@@ -54,23 +54,28 @@ typedef struct s_img
 // 	int	y;
 // }				t_point;
 
+typedef struct	s_addr
+{
+	char	*addr;
+	int		bpp;
+	int		size_l;
+	int		endian;
+}				t_addr;
+
 typedef struct	s_data
 {
 	char	**map;
-	char	*addr;
 	void	*mlx;
 	void	*win;
 	int		img_width; //画像の幅
 	int		img_height; //画像の高さ
-	int		bits_per_pixel;
-	int		line_length;
 	int		map_row_count;
 	int		map_col_count;
-	int		endian;
 	int		player_x;
 	int		player_y;
 	int		counter;
 	int		goal_flag;
+	t
 	t_img	img;
 }				t_data;
 

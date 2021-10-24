@@ -6,19 +6,12 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 22:18:58 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/23 23:59:58 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/24 00:25:23 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-// void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
-// {
-// 	char	*dst;
-
-// 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-// 	*(unsigned int*)dst = color;
-// }
 
 void	draw_image(t_data *data, int x, int y)
 {
