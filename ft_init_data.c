@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 01:52:22 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/24 23:34:19 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/25 22:59:33 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void init_data(t_data *data)
 	data->goal_flag = 0;
 }
 
-	// data->addr = mlx_get_data_addr()
 void	set_map_path(t_data *data)
 {
 	data->img.player = mlx_xpm_file_to_image(data->mlx, "image/kirby.xpm",

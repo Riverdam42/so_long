@@ -75,7 +75,9 @@ typedef struct	s_data
 	int		player_y;
 	int		counter;
 	int		goal_flag;
-	t
+	t_addr	kirby;
+	t_addr	Maximum;
+	t_addr	star;
 	t_img	img;
 }				t_data;
 

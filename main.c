@@ -19,7 +19,7 @@ int	main(void)
 	ft_read_map(&data, "./maps/pdf.ber");
 	init_data(&data);
 	set_map_path(&data);
-	mlx_loop_hook(data.mlx, ft_draw_map, &data);
+	ft_draw_map(&data);
 	mlx_key_hook(data.win, ft_key_hook, &data);
 	mlx_hook(data.win, 17, 1L<<17, ft_close_map, &data); //dataで座標の構造体管理をする
 	mlx_loop(data.mlx);

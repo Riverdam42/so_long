@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:19:40 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/23 23:24:06 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/25 22:54:34 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ static int	check_wall_and_move_player(t_data *data, int move_x, int move_y)
 	return (1);
 }
 
-
 int	ft_key_hook(int keycode, t_data *data) //特定のkeycode(a==0)を押したら主人公を動かして歩数をカウントする
 {
 	int result;
@@ -63,5 +62,6 @@ int	ft_key_hook(int keycode, t_data *data) //特定のkeycode(a==0)を押した�
 	mlx_clear_window(data->mlx, data->win);
     if (result != 0)
 		printf("counter: %d\n", data->counter++);
+	ft_draw_map(data);
 	return (0);
 }
