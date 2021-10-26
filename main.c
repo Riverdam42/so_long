@@ -20,8 +20,8 @@ int	main(int argc, char **argv)
 	{
 		print_error("Invalid arguments\n");
 	}
-	init_data(&data);
 	ft_read_map(&data, argv[1]);
+	init_data(&data);
 	set_map_path(&data);
 	ft_draw_map(&data);
 	mlx_key_hook(data.win, ft_key_hook, &data);

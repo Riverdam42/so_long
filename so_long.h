@@ -56,11 +56,6 @@ typedef struct s_img
 // 	int	y;
 // }				t_point;
 
-typedef struct	s_count
-{
-	int		collectible;
-}				t_count;
-
 typedef struct	s_data
 {
 	char	**map;
@@ -74,20 +69,18 @@ typedef struct	s_data
 	int		player_y;
 	int		counter;
 	int		goal_flag;
-	t_count	count;
 	t_img	img;
 }				t_data;
 
 void	ft_read_map(t_data *data, char *map_ber);
+void	check_map(t_data *data, char *new_line);
 void	init_data(t_data *data);
 void	set_map_path(t_data *data);
 int		ft_draw_map(t_data *data);
 int		ft_key_hook(int keycode, t_data *data);
 int		ft_close_map(int keycode, t_data *data);
 int		stop_and_exit(t_data *data);
-int		print_error(char *str);
+void	print_error(char *str);
 size_t	ft_strlen(const char *str);
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putnbr_fd(int nb, int fd);
+char	*ft_strchr(const char *s, int c);
 #endif

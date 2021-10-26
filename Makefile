@@ -6,7 +6,7 @@
 #    By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/07 14:23:27 by kkawano           #+#    #+#              #
-#    Updated: 2021/10/26 10:46:58 by kkawano          ###   ########.fr        #
+#    Updated: 2021/10/26 16:25:01 by kkawano          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = so_long
 SRCS = 	main.c\
 		main_utils.c\
 		ft_read_map.c\
+		ft_check_map.c\
 		ft_init_data.c\
 		ft_draw_map.c\
 		ft_key_hook.c\

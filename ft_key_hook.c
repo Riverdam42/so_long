@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:19:40 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/26 12:35:33 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/26 16:21:56 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@ static int	check_wall_and_move_player(t_data *data, int move_x, int move_y)
 	}
 	if (data->map[data->player_y + move_y][data->player_x + move_x] == COLLECTION)
 	{
-		data->goal_flag++;
+		printf("goal_flag-- : %d\n", data->goal_flag);
+		data->goal_flag--;
+		printf("goal_flag-- : %d\n", data->goal_flag);
 	}
 	if (data->map[data->player_y + move_y][data->player_x + move_x] == GOAL)
 	{
 		//goal!!!
-		if (data->goal_flag == data->count.collectible)
+		if (data->goal_flag == 0)
 			exit(EXIT_SUCCESS);
 		return (0);
 	}
