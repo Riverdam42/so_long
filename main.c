@@ -12,11 +12,15 @@
 
 #include "so_long.h"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	t_data	data;
 
-	ft_read_map(&data, "./maps/pdf.ber");
+	if (argc != 2)
+	{
+		print_error("Invalid arguments\n");
+	}
+	ft_read_map(&data, argv[1]);
 	init_data(&data);
 	set_map_path(&data);
 	ft_draw_map(&data);

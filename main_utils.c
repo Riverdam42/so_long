@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_main_utils.c                                    :+:      :+:    :+:   */
+/*   main_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/17 10:29:16 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/22 19:01:24 by kkawano          ###   ########.fr       */
+/*   Created: 2021/10/26 10:14:18 by kkawano           #+#    #+#             */
+/*   Updated: 2021/10/26 10:15:04 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,4 @@ void	ft_putnbr_fd(int nb, int fd)
 		ft_putnbr_fd(nb / 10 * sign, fd);
 	}
 	ft_putchar_fd(nb % 10 * sign + '0', fd);
-}
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	len;
-
-	len = 0;
-	while (str[len])
-	{
-		len++;
-	}
-	return (len);
 }

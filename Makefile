@@ -6,13 +6,14 @@
 #    By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/07 14:23:27 by kkawano           #+#    #+#              #
-#    Updated: 2021/10/23 02:14:27 by kkawano          ###   ########.fr        #
+#    Updated: 2021/10/26 10:46:58 by kkawano          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
 SRCS = 	main.c\
+		main_utils.c\
 		ft_read_map.c\
 		ft_init_data.c\
 		ft_draw_map.c\
