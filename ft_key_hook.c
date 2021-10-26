@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:19:40 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/25 22:54:34 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/26 12:35:33 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ static int	check_wall_and_move_player(t_data *data, int move_x, int move_y)
 	}
 	if (data->map[data->player_y + move_y][data->player_x + move_x] == COLLECTION)
 	{
-		data->goal_flag = 1;
+		data->goal_flag++;
 	}
 	if (data->map[data->player_y + move_y][data->player_x + move_x] == GOAL)
 	{
 		//goal!!!
-		if (data->goal_flag == 1)
+		if (data->goal_flag == data->count.collectible)
 			exit(EXIT_SUCCESS);
 		return (0);
 	}
@@ -36,24 +36,20 @@ static int	check_wall_and_move_player(t_data *data, int move_x, int move_y)
 	return (1);
 }
 
-int	ft_key_hook(int keycode, t_data *data) //特定のkeycode(a==0)を押したら主人公を動かして歩数をカウントする
+int	ft_key_hook(int keycode, t_data *data)
 {
 	int result;
 
 	result = 0;
 
-	if (keycode == A_KEY && data->map[data->player_y][data->player_x] != WALL)
+	if (keycode == A_KEY)
 			result = check_wall_and_move_player(data, -1, 0);
-		//data->player_x -= 32;
 	if (keycode == S_KEY)
 			result = check_wall_and_move_player(data, 0, 1);
-		//data->player_y += 32;
 	if (keycode == D_KEY)
 			result = check_wall_and_move_player(data, 1, 0);
-		//data->player_x += 32;
 	if (keycode == W_KEY)
 			result = check_wall_and_move_player(data, 0, -1);
-		//data->player_y -= 32;
 	if (keycode == ESC_KEY)
 	{
         mlx_destroy_window(data->mlx, data->win);

@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 01:52:22 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/25 22:59:33 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/26 12:34:20 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void init_data(t_data *data)
     data->win = mlx_new_window(data->mlx, data->map_col_count * TILESIZE, data->map_row_count * TILESIZE, "so_long");
     data->counter = 1;
 	data->goal_flag = 0;
+	data->count.collectible = 0;
 }
 
 void	set_map_path(t_data *data)
@@ -35,15 +36,6 @@ void	set_map_path(t_data *data)
 	data->img.goal = mlx_xpm_file_to_image(data->mlx, "image/Star.xpm",
 			&data->img_width, &data->img_height);
 }
-
-// static void	init_map_image(t_data *data)
-// {
-// 	data->img.player = NULL;
-// 	data->img.freespace = NULL;
-// 	data->img.wall = NULL;
-// 	data->img.collection = NULL;
-// 	data->img.goal = NULL;
-// }
 
 // static void init_data(t_data)
 // {

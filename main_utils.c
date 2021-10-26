@@ -6,13 +6,13 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 10:14:18 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/26 10:15:04 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/26 12:30:25 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	print_error(char *str)
+void	print_error(char *str)
 {
 	size_t	len;
 
@@ -21,7 +21,9 @@ int	print_error(char *str)
 		len++;
 	write(2, str, len);
 	write(2, "\n", 1);
-	return (1);
+	//printfを使う
+	system("leaks so_long");
+	exit(EXIT_FAILURE);
 }
 
 void	ft_putchar_fd(char c, int fd)

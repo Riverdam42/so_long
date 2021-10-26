@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 09:44:21 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/23 03:00:00 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/26 12:23:08 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,15 @@ void	ft_read_map(t_data *data, char *map_ber)
 
 	data->map = (char **)malloc(sizeof(char *));
 	if (!data->map)
-		exit(EXIT_FAILURE);
+		print_error("malloc error!!\n");
 	data->map[0] = NULL;
 	data->map_row_count = 0;
 	data->map_col_count = 0;
 	fd = open(map_ber, O_RDONLY);
 	if (fd == -1)
-		exit(EXIT_FAILURE);
+	{
+		print_error("open failed!!\n");
+	}
 	new_line = "start";
 	while (new_line)
 	{
@@ -57,6 +59,8 @@ void	ft_read_map(t_data *data, char *map_ber)
 			if (data->map_col_count == 0)
 			data->map_col_count = (ft_strlen(new_line) - 1);
 		}
+		else
+			print_error("GNL failed!!\n");
 	}
 	//mapを閉じたら（1番最後に）読み込んだnew_lineをフリーする
 }

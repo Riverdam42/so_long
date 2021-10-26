@@ -38,6 +38,8 @@
 # define WALL '1'
 # define TILESIZE 32
 
+# define MAP_SYMBOLS "01CEP"
+
 typedef struct s_img
 {
 	void	*player;
@@ -54,13 +56,10 @@ typedef struct s_img
 // 	int	y;
 // }				t_point;
 
-typedef struct	s_addr
+typedef struct	s_count
 {
-	char	*addr;
-	int		bpp;
-	int		size_l;
-	int		endian;
-}				t_addr;
+	int		collectible;
+}				t_count;
 
 typedef struct	s_data
 {
@@ -75,9 +74,7 @@ typedef struct	s_data
 	int		player_y;
 	int		counter;
 	int		goal_flag;
-	t_addr	kirby;
-	t_addr	Maximum;
-	t_addr	star;
+	t_count	count;
 	t_img	img;
 }				t_data;
 
