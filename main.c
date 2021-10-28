@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		print_error("Invalid arguments\n");
+		print_error("ERROR : Invalid arguments\n");
 	}
 	ft_read_map(&data, argv[1]);
 	init_data(&data);

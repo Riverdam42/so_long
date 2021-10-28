@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 14:34:40 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/26 18:23:38 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/28 15:41:34 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void check_map(t_data *data, char *new_line)
 		if (new_line[i] == 'C')
 				data->goal_flag++;
 		else if (!ft_strchr(MAP_SYMBOLS, new_line[i]))
-				print_error("Some words are not loaded in the map\n");
+				print_error("ERROR : Some words are not loaded in the map\n");
 		i++;
 	}
 }
