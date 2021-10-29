@@ -49,13 +49,6 @@ typedef struct s_img
 	void	*goal;
 }				t_img;
 
-
-// typedef struct s_point
-// {
-// 	int	x;
-// 	int	y;
-// }				t_point;
-
 typedef struct	s_data
 {
 	char	**map;
