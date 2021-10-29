@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 17:44:33 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/14 22:53:1 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/29 21:53:54 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ int		ft_key_hook(int keycode, t_data *data);
 int		ft_close_map(int keycode, t_data *data);
 int		stop_and_exit(t_data *data);
 void	print_error(char *str);
+void	safe_free(char **str)
 size_t	ft_strlen(const char *str);
 char	*ft_strchr(const char *s, int c);
 #endif

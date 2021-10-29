@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 10:14:18 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/26 15:54:44 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/29 21:53:18 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,13 @@ void	print_error(char *str)
 	write(2, str, len);
 	write(2, "\n", 1);
 	exit(EXIT_FAILURE);
+}
+
+void safe_free(char **str)
+{
+	if (*str != NULL)
+	{
+		free (*str);
+		*str = (NULL);
+	}
 }
