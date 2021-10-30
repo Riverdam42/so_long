@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 09:44:21 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/28 15:42:39 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/30 16:37:14 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_read_map(t_data *data, char *map_ber)
 	new_line = "start";
 	while (new_line)
 	{
-		new_line = get_next_line(fd); //GNLで１行ずつ読み込む //成功したらマップの全行をnew_mapにコピーする
+		new_line = get_next_line(fd);
 		if (new_line)
 		{
 			add_next_newline(data, new_line);

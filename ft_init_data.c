@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 01:52:22 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/26 16:22:17 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/10/29 23:26:28 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void init_data(t_data *data)
 {
-    data->mlx = mlx_init();
-    data->win = mlx_new_window(data->mlx, data->map_col_count * TILESIZE, data->map_row_count * TILESIZE, "so_long");
+	data->mlx = mlx_init();
+	data->win = mlx_new_window(data->mlx, data->map_col_count * TILESIZE, data->map_row_count * TILESIZE, "so_long");
+	data->player_num = 0;
 	data->counter = 1;
 }
 
