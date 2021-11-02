@@ -6,26 +6,32 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 14:34:40 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/31 23:51:36 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/02 15:07:14 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "so_long.h"
 
-void check_map(t_data *data, char *new_line)
+int     ft_check_map(t_data *data)
 {
-	int i;
+	int x;
+	int y;
 
-	i = 0;
-	while (new_line[i])
+	y = -1;
+	while(++y < data->map_row_count)
 	{
-		if (new_line[i] == 'C')
+		x = -1;
+		while (++x < data->map_col_count)
+		{
+			if (data->map[y][x] == 'C')
 				data->goal_flag++;
-		if (!ft_strchr(MAP_SYMBOLS, new_line[i]))
+			if (data->map[y][x] == 'P')
+				data->player_num++;
+			if (!(ft_strchr(MAP_SYMBOLS, data->map[y][x])))
 				print_error("ERROR : Some words are not loaded in the map\n");
-		i++;
+		}
 	}
-	printf("player_num : %d\n", data->player_num);
 	if (data->player_num != 1)
 		print_error("ERROR : There are too many players\n");
+	return (0);
 }

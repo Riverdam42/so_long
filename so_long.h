@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 17:44:33 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/29 23:28:47 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/02 15:07:22 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@
 # define WALL '1'
 # define TILESIZE 32
 
-# define MAP_SYMBOLS "01CEP"
+# define MAP_SYMBOLS "01CEP\n"
 
 typedef struct s_img
 {
@@ -67,7 +67,7 @@ typedef struct	s_data
 }				t_data;
 
 void	ft_read_map(t_data *data, char *map_ber);
-void	check_map(t_data *data, char *new_line);
+int     ft_check_map(t_data *data);
 void	init_data(t_data *data);
 void	set_map_path(t_data *data);
 int		ft_draw_map(t_data *data);

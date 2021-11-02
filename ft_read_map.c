@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 09:44:21 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/30 16:37:14 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/02 15:09:17 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,9 @@ void	ft_read_map(t_data *data, char *map_ber)
 			add_next_newline(data, new_line);
 			if (data->map_col_count == 0)
 			data->map_col_count = (ft_strlen(new_line) - 1);
-			check_map(data, new_line);
 		}
-		//else
-		// 	print_error("ERROR : GNL failed!!\n");
+		if (new_line == NULL)
+			print_error("ERROR : GNL failed!!\n");
 	}
-	//mapを閉じたら（1番最後に）読み込んだnew_lineをフリーする
+	ft_check_map(data);
 }
-
-// read map
-// map size に応じてwindow を作る
