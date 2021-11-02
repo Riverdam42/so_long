@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 17:44:33 by kkawano           #+#    #+#             */
-/*   Updated: 2021/11/02 15:07:22 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/02 15:56:25 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 # include <fcntl.h>
 # include <sys/types.h>
 # include <sys/stat.h>
-#include <sysexits.h>
-#include "gnl/get_next_line.h"
+# include <sysexits.h>
+# include "gnl/get_next_line.h"
 
 # define W_KEY 13
 # define A_KEY 0

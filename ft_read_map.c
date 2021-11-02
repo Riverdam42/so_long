@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 09:44:21 by kkawano           #+#    #+#             */
-/*   Updated: 2021/11/02 15:09:17 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/02 15:56:01 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ void	ft_read_map(t_data *data, char *map_ber)
 
 	data->map = (char **)malloc(sizeof(char *));
 	if (!data->map)
-		print_error("ERROR : malloc error!!\n");
+		print_error("malloc error!!\n");
 	data->map[0] = NULL;
 	data->map_row_count = 0;
 	data->map_col_count = 0;
 	fd = open(map_ber, O_RDONLY);
 	if (fd == -1)
 	{
-		print_error("ERROR : open failed!!\n");
+		print_error("open failed!!\n");
 	}
 	new_line = "start";
 	while (new_line)
@@ -59,8 +59,8 @@ void	ft_read_map(t_data *data, char *map_ber)
 			if (data->map_col_count == 0)
 			data->map_col_count = (ft_strlen(new_line) - 1);
 		}
-		if (new_line == NULL)
-			print_error("ERROR : GNL failed!!\n");
+		// if (new_line == NULL)
+		// 	print_error("GNL failed!!\n");
 	}
 	ft_check_map(data);
 }

@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 21:53:01 by kkawano           #+#    #+#             */
-/*   Updated: 2021/10/30 16:24:00 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/02 15:56:10 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		print_error("ERROR : Invalid arguments\n");
+		print_error("Invalid arguments\n");
 	}
 	ft_read_map(&data, argv[1]);
 	init_data(&data);

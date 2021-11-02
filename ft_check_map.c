@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 14:34:40 by kkawano           #+#    #+#             */
-/*   Updated: 2021/11/02 15:07:14 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/02 15:54:01 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ int     ft_check_map(t_data *data)
 			if (data->map[y][x] == 'P')
 				data->player_num++;
 			if (!(ft_strchr(MAP_SYMBOLS, data->map[y][x])))
-				print_error("ERROR : Some words are not loaded in the map\n");
+				print_error("Error\n Some words are not loaded in the map\n");
 		}
 	}
 	if (data->player_num != 1)
-		print_error("ERROR : There are too many players\n");
+		print_error("Error\n There are too many players\n");
 	return (0);
 }
