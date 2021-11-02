@@ -6,11 +6,22 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 09:44:21 by kkawano           #+#    #+#             */
-/*   Updated: 2021/11/02 15:56:01 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/02 18:51:09 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static void check_square(t_data *data, char *new_line)
+{
+	int row_length;
+
+	row_length = ft_strlen(new_line);
+	if (ft_strchr(new_line, '\n'))
+		row_length -= 1;
+	if (row_length != data->map_col_count)
+		print_error("The map is not square\n");
+}
 
 static void add_next_newline(t_data *data, char *new_line)
 {
@@ -46,21 +57,19 @@ void	ft_read_map(t_data *data, char *map_ber)
 	data->map_col_count = 0;
 	fd = open(map_ber, O_RDONLY);
 	if (fd == -1)
-	{
 		print_error("open failed!!\n");
-	}
-	new_line = "start";
+	new_line = get_next_line(fd);
+	data->map_col_count = (ft_strlen(new_line) - 1);
 	while (new_line)
 	{
-		new_line = get_next_line(fd);
 		if (new_line)
 		{
+			check_square(data, new_line);
 			add_next_newline(data, new_line);
-			if (data->map_col_count == 0)
-			data->map_col_count = (ft_strlen(new_line) - 1);
 		}
+		new_line = get_next_line(fd);
 		// if (new_line == NULL)
-		// 	print_error("GNL failed!!\n");
+		// 	print_error("GNL failed!!\n");å
 	}
 	ft_check_map(data);
 }

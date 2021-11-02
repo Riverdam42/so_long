@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:19:40 by kkawano           #+#    #+#             */
-/*   Updated: 2021/11/02 15:56:39 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/02 19:03:56 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,11 @@ static int	check_wall_and_move_player(t_data *data, int move_x, int move_y)
 	{
 		//goal!!!
 		if (data->goal_flag == 0)
+		{
+			printf("counter: %d\n", data->counter++);
 			exit(EXIT_SUCCESS);
-		return (1);
+		}
+		return (0);
 	}
 	data->map[data->player_y + move_y][data->player_x + move_x] = PLAYER;
 	data->map[data->player_y][data->player_x] = FREESPACE;
