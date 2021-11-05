@@ -6,15 +6,15 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 09:44:21 by kkawano           #+#    #+#             */
-/*   Updated: 2021/11/02 18:51:09 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/06 04:20:19 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+# include "so_long.h"
 
-static void check_square(t_data *data, char *new_line)
+static void	check_square(t_data *data, char *new_line)
 {
-	int row_length;
+	int	row_length;
 
 	row_length = ft_strlen(new_line);
 	if (ft_strchr(new_line, '\n'))
@@ -26,22 +26,22 @@ static void check_square(t_data *data, char *new_line)
 static void add_next_newline(t_data *data, char *new_line)
 {
 	char **new_map; //new_map = {new_line, NULL}
-	int		i;
+int		i;
 
-	new_map = (char **)malloc(sizeof(char *) * (data->map_row_count + 2));
-	if (!new_map)
-		stop_and_exit(data);
-	i = 0;
-	while(data->map[i])
-	{
-		new_map[i] = data->map[i];
-		i++;
-	}
-	new_map[i] = new_line;
-	new_map[i + 1] = NULL;
-	free(data->map);
-	data->map = new_map;
-	data->map_row_count++;
+new_map = (char **)malloc(sizeof(char *) * (data->map_row_count + 2));
+if (!new_map)
+	stop_and_exit(data);
+i = 0;
+while(data->map[i])
+{
+	new_map[i] = data->map[i];
+	i++;
+}
+new_map[i] = new_line;
+new_map[i + 1] = NULL;
+free(data->map);
+data->map = new_map;
+data->map_row_count++;
 }
 
 void	ft_read_map(t_data *data, char *map_ber)
