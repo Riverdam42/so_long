@@ -6,7 +6,7 @@
 #    By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/07 14:23:27 by kkawano           #+#    #+#              #
-#    Updated: 2021/10/26 16:25:01 by kkawano          ###   ########.fr        #
+#    Updated: 2021/11/06 06:41:55 by kkawano          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,6 @@ SRCS = 	main.c\
 		ft_draw_map.c\
 		ft_key_hook.c\
 		ft_close_map.c\
-		ft_stop_and_exit.c\
 		gnl/get_next_line.c\
 		gnl/get_next_line_utils.c
 

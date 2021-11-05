@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 05:15:37 by kkawano           #+#    #+#             */
-/*   Updated: 2021/11/06 06:01:27 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/06 06:43:55 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	add_next_newline(t_data *data, char *new_line)
 
 	new_map = (char **)malloc(sizeof(char *) * (data->map_row_count + 2));
 	if (!new_map)
-		stop_and_exit(data);
+		print_error("malloc error!!\n");
 	i = 0;
 	while (data->map[i])
 	{
