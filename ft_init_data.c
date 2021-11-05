@@ -6,13 +6,13 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 01:52:22 by kkawano           #+#    #+#             */
-/*   Updated: 2021/11/06 04:53:02 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/06 05:14:24 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void init_data(t_data *data)
+void	init_data(t_data *data)
 {
 	data->mlx = mlx_init();
 	data->win = mlx_new_window(data->mlx, data->map_col_count * TILESIZE, \
@@ -27,11 +27,11 @@ void	set_map_path(t_data *data)
 			&data->img_width, &data->img_height);
 	// if (!data->img.player)
 	// 	print_errr("Failed to retrieve playe image");
-	data->img.freespace = mlx_xpm_file_to_image(data->mlx, "image/freespace.xpm",
+	data->img.ground = mlx_xpm_file_to_image(data->mlx, "image/freespace.xpm",
 			&data->img_width, &data->img_height);
-	data->img.wall = mlx_xpm_file_to_image(data->mlx,"image/starblock.xpm",
+	data->img.wall = mlx_xpm_file_to_image(data->mlx, "image/starblock.xpm",
 			&data->img_width, &data->img_height);
-	data->img.collection = mlx_xpm_file_to_image(data->mlx, "image/Maximum.xpm",
+	data->img.collect = mlx_xpm_file_to_image(data->mlx, "image/Maximum.xpm",
 			&data->img_width, &data->img_height);
 	data->img.goal = mlx_xpm_file_to_image(data->mlx, "image/Star.xpm",
 			&data->img_width, &data->img_height);

@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 22:18:58 by kkawano           #+#    #+#             */
-/*   Updated: 2021/11/06 04:53:16 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/06 04:58:23 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	draw_image(t_data *data, int x, int y)
 {
-	mlx_put_image_to_window(data->mlx, data->win, data->img.freespace, \
+	mlx_put_image_to_window(data->mlx, data->win, data->img.ground, \
 				x * TILESIZE, y * TILESIZE);
 	if (data->map[y][x] == 'P')
 	{
@@ -24,7 +24,7 @@ void	draw_image(t_data *data, int x, int y)
 				data->player_x * TILESIZE, data->player_y * TILESIZE);
 	}
 	else if (data->map[y][x] == 'C')
-		mlx_put_image_to_window(data->mlx, data->win, data->img.collection, \
+		mlx_put_image_to_window(data->mlx, data->win, data->img.collect, \
 				x * TILESIZE, y * TILESIZE);
 	else if (data->map[y][x] == 'E')
 		mlx_put_image_to_window(data->mlx, data->win, data->img.goal, \
