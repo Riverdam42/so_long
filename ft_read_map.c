@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_read_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkawano <kkawano@student.42tokyo.j>        +#+  +:+       +#+        */
+/*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 05:15:37 by kkawano           #+#    #+#             */
-/*   Updated: 2021/11/06 05:15:59 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/06 06:01:27 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,16 @@ static void	map_init(t_data *data)
 	data->map_col_count = 0;
 }
 
-static void	check_map_name(t_data *data, char *map_ber)
+static void	check_map_name(char *map_ber)
 {
 	size_t	name_len;
 	size_t	result;
 
 	name_len = 0;
 	name_len = ft_strlen(map_ber);
-	result = ft_strncmp(map_ber[name_len - 4], ".ber", 4);
+	result = ft_strncmp(&map_ber[name_len - 4], ".ber", 4);
 	if (result != 0)
-		print_error("拡張子が違うよ");
+		print_error("The extension of the map is different\n");
 }
 
 void	ft_read_map(t_data *data, char *map_ber)
@@ -68,7 +68,7 @@ void	ft_read_map(t_data *data, char *map_ber)
 	int		fd;
 	char	*new_line;
 
-	check_map_name(data, map_ber);
+	check_map_name(map_ber);
 	data->map = (char **)malloc(sizeof(char *));
 	if (!data->map)
 		print_error("malloc error!!\n");
