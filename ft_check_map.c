@@ -6,13 +6,13 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 14:34:40 by kkawano           #+#    #+#             */
-/*   Updated: 2021/11/06 10:47:41 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/06 10:49:02 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void check_char(t_data *data)
+static void	check_char(t_data *data)
 {
 	if (data->player_num != 1)
 		print_error("There should be only one player on the map!!\n");
