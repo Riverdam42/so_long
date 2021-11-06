@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 05:15:37 by kkawano           #+#    #+#             */
-/*   Updated: 2021/11/06 06:43:55 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/06 10:23:01 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	check_square(t_data *data, char *new_line)
 	if (ft_strchr(new_line, '\n'))
 		row_length -= 1;
 	if (row_length != data->map_col_count)
-		print_error("The map is not square\n");
+		print_error("The map is not square!!\n");
 }
 
 static void	add_next_newline(t_data *data, char *new_line)
@@ -60,7 +60,7 @@ static void	check_map_name(char *map_ber)
 	name_len = ft_strlen(map_ber);
 	result = ft_strncmp(&map_ber[name_len - 4], ".ber", 4);
 	if (result != 0)
-		print_error("The extension of the map is different\n");
+		print_error("The extension of the map is different!!\n");
 }
 
 void	ft_read_map(t_data *data, char *map_ber)
@@ -77,6 +77,8 @@ void	ft_read_map(t_data *data, char *map_ber)
 	if (fd == -1)
 		print_error("open failed!!\n");
 	new_line = get_next_line(fd);
+	if (new_line == NULL)
+		print_error("There's no map to load!!\n");
 	data->map_col_count = (ft_strlen(new_line) - 1);
 	while (new_line)
 	{

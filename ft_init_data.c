@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 01:52:22 by kkawano           #+#    #+#             */
-/*   Updated: 2021/11/06 06:03:06 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/06 10:23:33 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,23 @@ void	set_map_path(t_data *data)
 	data->img.player = mlx_xpm_file_to_image(data->mlx, "image/kirby.xpm",
 			&data->img_width, &data->img_height);
 	if (!data->img.player)
-		print_error("Failed to retrieve player image");
+		print_error("Failed to retrieve player image!");
 	data->img.ground = mlx_xpm_file_to_image(data->mlx, "image/freespace.xpm",
 			&data->img_width, &data->img_height);
 	if (!data->img.ground)
-		print_error("Failed to retrieve ground image");
+		print_error("Failed to retrieve ground image!");
 	data->img.wall = mlx_xpm_file_to_image(data->mlx, "image/starblock.xpm",
 			&data->img_width, &data->img_height);
 	if (!data->img.wall)
-		print_error("Failed to retrieve wall image");
+		print_error("Failed to retrieve wall image!");
 	data->img.collect = mlx_xpm_file_to_image(data->mlx, "image/Maximum.xpm",
 			&data->img_width, &data->img_height);
 	if (!data->img.collect)
-		print_error("Failed to retrieve collect image");
+		print_error("Failed to retrieve collect image!");
 	data->img.goal = mlx_xpm_file_to_image(data->mlx, "image/Star.xpm",
 			&data->img_width, &data->img_height);
 	if (!data->img.goal)
-		print_error("Failed to retrieve goal image");
+		print_error("Failed to retrieve goal image!");
 }
 
 // static void init_data(t_data)

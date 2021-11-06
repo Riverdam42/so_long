@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:19:40 by kkawano           #+#    #+#             */
-/*   Updated: 2021/11/06 04:59:30 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/06 10:23:48 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	check_wall_and_move_player(t_data *data, int move_x, int move_y)
 	{
 		if (data->goal_flag == 0)
 		{
-			printf("counter: %d\n", data->counter++);
+			printf("counter : %d\n", data->counter++);
 			exit(EXIT_SUCCESS);
 		}
 		return (0);
@@ -56,7 +56,7 @@ int	ft_key_hook(int keycode, t_data *data)
 	}
 	mlx_clear_window(data->mlx, data->win);
 	if (result != 0)
-		printf("counter: %d\n", data->counter++);
+		printf("counter : %d\n", data->counter++);
 	ft_draw_map(data);
 	return (0);
 }
