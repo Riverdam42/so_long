@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_data.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkawano <kkawano@student.42tokyo.j>        +#+  +:+       +#+        */
+/*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 21:48:28 by kkawano           #+#    #+#             */
-/*   Updated: 2021/11/06 21:48:35 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/06 22:21:00 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	set_map_path(t_data *data)
 			&data->img_width, &data->img_height);
 	if (!data->img.wall)
 		print_error("Failed to retrieve wall image!");
-	data->img.collect = mlx_xpm_file_to_image(data->mlx, "image/Maximum.xpm",
+	data->img.collect = mlx_xpm_file_to_image(data->mlx, "image/maximum.xpm",
 			&data->img_width, &data->img_height);
 	if (!data->img.collect)
 		print_error("Failed to retrieve collect image!");
