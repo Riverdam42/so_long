@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 10:14:18 by kkawano           #+#    #+#             */
-/*   Updated: 2021/11/06 10:26:42 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/06 21:49:57 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	print_error(char *str)
 		len++;
 	write(2, "Error\n", 6);
 	write(2, str, len);
-	write(2, "\n", 1);
 	exit(EXIT_FAILURE);
 }
 
@@ -43,12 +42,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-
-// void safe_free(char **str)
-// {
-// 	if (*str != NULL)
-// 	{
-// 		free (*str);
-// 		*str = (NULL);
-// 	}
-// }

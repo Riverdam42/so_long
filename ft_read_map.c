@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 05:15:37 by kkawano           #+#    #+#             */
-/*   Updated: 2021/11/06 10:23:01 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/06 21:03:25 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,6 @@ static void	add_next_newline(t_data *data, char *new_line)
 	data->map_row_count++;
 }
 
-static void	map_init(t_data *data)
-{
-	data->map[0] = NULL;
-	data->map_row_count = 0;
-	data->map_col_count = 0;
-}
-
 static void	check_map_name(char *map_ber)
 {
 	size_t	name_len;
@@ -72,7 +65,7 @@ void	ft_read_map(t_data *data, char *map_ber)
 	data->map = (char **)malloc(sizeof(char *));
 	if (!data->map)
 		print_error("malloc error!!\n");
-	map_init(data);
+	data->map[0] = NULL;
 	fd = open(map_ber, O_RDONLY);
 	if (fd == -1)
 		print_error("open failed!!\n");

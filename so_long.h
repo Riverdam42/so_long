@@ -6,7 +6,7 @@
 /*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 17:44:33 by kkawano           #+#    #+#             */
-/*   Updated: 2021/11/06 10:38:05 by kkawano          ###   ########.fr       */
+/*   Updated: 2021/11/06 21:11:23 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,15 @@ typedef struct s_data
 	int		player_y;
 	int		player_num;
 	int		goal_num;
-	int		counter;
 	int		goal_flag;
+	int		counter;
 	t_img	img;
 }				t_data;
 
 void	ft_read_map(t_data *data, char *map_ber);
 int		ft_check_map(t_data *data);
 void	init_data(t_data *data);
+void	init_mlx(t_data *data);
 void	set_map_path(t_data *data);
 int		ft_draw_map(t_data *data);
 int		ft_key_hook(int keycode, t_data *data);

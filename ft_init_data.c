@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_data.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: kkawano <kkawano@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/23 01:52:22 by kkawano           #+#    #+#             */
-/*   Updated: 2021/11/06 10:23:33 by kkawano          ###   ########.fr       */
+/*   Created: 2021/11/06 21:48:28 by kkawano           #+#    #+#             */
+/*   Updated: 2021/11/06 21:48:35 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,21 @@
 
 void	init_data(t_data *data)
 {
-	data->mlx = mlx_init();
-	data->win = mlx_new_window(data->mlx, data->map_col_count * TILESIZE, \
-			data->map_row_count * TILESIZE, "so_long");
 	data->player_num = 0;
 	data->counter = 1;
+	data->goal_num = 0;
+	data->goal_flag = 0;
+	data->map_col_count = 0;
+	data->map_row_count = 0;
+}
+
+void	init_mlx(t_data *data)
+{
+	data->mlx = mlx_init();
+	if (!data->mlx)
+		print_error("MLX initialization failed!!\n");
+	data->win = mlx_new_window(data->mlx, data->map_col_count * TILESIZE, \
+			data->map_row_count * TILESIZE, "so_long");
 }
 
 void	set_map_path(t_data *data)
@@ -44,21 +54,3 @@ void	set_map_path(t_data *data)
 	if (!data->img.goal)
 		print_error("Failed to retrieve goal image!");
 }
-
-// static void init_data(t_data)
-// {
-//     data->*map = NULL;
-// 	data->mlx = NULL;
-// 	data->win = NULL;
-// 	data->addr = NULL;
-// 	data->img_width = NULL;
-// 	data->img_height = NULL;
-// 	data->bits_per_pixel = NULL;
-// 	data->line_length = NULL;
-// 	data->map_row_count = NULL;
-// 	data->map_col_count = NULL;
-// 	data->endian = NULL;
-// 	int		player_x;
-// 	int		player_y;
-// 	int		counter;
-// }

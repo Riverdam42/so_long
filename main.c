@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkawano <kkawano@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: kkawano <kkawano@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 21:53:01 by kkawano           #+#    #+#             */
-/*   Updated: 2021/11/06 10:49:45 by kkawano          ###   ########.fr       */
+/*   Created: 2021/11/06 21:49:19 by kkawano           #+#    #+#             */
+/*   Updated: 2021/11/06 21:49:24 by kkawano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ int	main(int argc, char **argv)
 	{
 		print_error("Invalid arguments!!\n");
 	}
-	ft_read_map(&data, argv[1]);
 	init_data(&data);
+	ft_read_map(&data, argv[1]);
+	init_mlx(&data);
 	set_map_path(&data);
 	ft_draw_map(&data);
 	mlx_key_hook(data.win, ft_key_hook, &data);
